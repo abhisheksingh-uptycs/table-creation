@@ -1,10 +1,9 @@
-#include </home/adhisheksingh/osquery/build/ns_osquery_utils_linux/osquery/utils/linux/idpkgquery.h>
-#include</home/adhisheksingh/osquery/osquery/sql/sql.h>
 #include <fstream>
 #include <iostream>
 #include <osquery/core/tables.h>
 #include <sstream>
 #include <unordered_map>
+#include</home/adhisheksingh/osquery/osquery/sql/sql.h>
 
 using namespace std;
 
@@ -41,50 +40,6 @@ QueryData genVulnerablePackages(QueryContext& context) {
           rows.push_back(r);
         }
     }
-  
-
-
-
-  // string dir = "/var/lib/dpkg";
-  // auto dpkg_query_exp = IDpkgQuery::create(dir);
-  //   auto dpkg_query = dpkg_query_exp.take();
-  //   auto package_list_exp = dpkg_query->getPackageList();
-  //   auto package_list = package_list_exp.take();
-
-  // for (const auto& package : package_list) {
-  //   if (packages[package.name] == package.version) {
-  //         Row r;
-  //         r["package_name"] = package.name;
-  //         r["package_version"] = package.version;
-  //         r["path"] = path;
-  //         rows.push_back(r);
-  //       }
-  // }
-
-  // ifstream packagesFile("/var/lib/dpkg/status");
-  // if (packagesFile.is_open()) {
-  //   while (packagesFile) {
-  //     getline(packagesFile, line);
-  //     if (!line.empty()) {
-  //       istringstream iss(line);
-  //       iss >> first >> second;
-  //       if (first == "Package:") {
-  //         packageName = second;
-  //       } else if (first == "Version:") {
-  //         packageVersion = second;
-  //       }
-  //     } else {
-  //       if (packages[packageName] == packageVersion) {
-  //         Row r;
-  //         r["package_name"] = packageName;
-  //         r["package_version"] = packageVersion;
-  //         r["path"] = path;
-  //         rows.push_back(r);
-  //       }
-  //     }
-  //   }
-  // }
-  // packagesFile.close();
   return rows;
 }
 } // namespace tables
